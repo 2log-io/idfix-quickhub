@@ -28,12 +28,12 @@ namespace
 
     extern "C"
     {
-        extern const unsigned char deviceCertificate[] asm("_binary_2log_device_local_crt_start");
-        extern const unsigned char deviceCertificateEnd[]   asm("_binary_2log_device_local_crt_end");
+        extern const unsigned char deviceCertificate[] asm("_binary_ipcertdummy_crt_start");
+        extern const unsigned char deviceCertificateEnd[]   asm("_binary_ipcertdummy_crt_end");
         static long deviceCertificateSize = deviceCertificateEnd - deviceCertificate;
 
-        extern const unsigned char deviceKey[] asm("_binary_2log_device_local_key_start");
-        extern const unsigned char deviceKeyEnd[]   asm("_binary_2log_device_local_key_end");
+        extern const unsigned char deviceKey[] asm("_binary_ipcertdummy_key_start");
+        extern const unsigned char deviceKeyEnd[]   asm("_binary_ipcertdummy_key_end");
         static long deviceKeySize = deviceKeyEnd - deviceKey;
     }
 
