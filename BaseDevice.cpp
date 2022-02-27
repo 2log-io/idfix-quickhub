@@ -10,7 +10,7 @@
 #include "ECDSASignatureVerifier.h"
 #include "HTTPFirmwareDownloader.h"
 #include "DeviceProperties.h"
-
+#include <esp_wifi.h>
 #include "MutexLocker.h"
 
 using namespace IDFix;
@@ -210,7 +210,9 @@ namespace _2log
     {
         ESP_LOGW(LOG_TAG, "Reset device configuration and restart...");
         _settings.clearConfig();
-
+        esp_wifi_disconnect ();
+        esp_wifi_stop();
+        esp_wifi_deinit();
         esp_restart();
     }
 
